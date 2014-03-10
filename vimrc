@@ -87,8 +87,8 @@ Bundle 'gmarik/vundle'
 " My bundles here:
 "
 " original repos on GitHub
-Bundle 'scrooloose/nerdtree'
-Bundle 'kien/ctrlp.vim'
+" Bundle 'scrooloose/nerdtree'
+" Bundle 'kien/ctrlp.vim'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'bling/vim-airline'
 " Bundle 'tpope/vim-fugitive'

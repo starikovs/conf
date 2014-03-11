@@ -13,3 +13,7 @@ bashrc -> ~/.bashrc
 ## osx
 
 bash_profile -> ~/.bash_profile 
+
+## win
+
+_vimrc -> $HOME\_vimrc

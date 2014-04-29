@@ -66,12 +66,28 @@ if !exists(":DiffOrig")
 		  \ | wincmd p | diffthis
 endif
 
-set cindent
+" http://vim.wikia.com/wiki/Indenting_source_code
+
+" copy the indentation from the previous line
+set autoindent
+
+" insert 4 spaces for a tab
 set tabstop=4
+
+" insert 4 spaces for indentation ( >>, << or ==. automatic indentation)
 set shiftwidth=4
+
+" affects what happens when you press the tab or bs keys
+set softtabstop=4
+
+" insert space characters whenever the tab key is pressed
 set expandtab
 
+" don't wrap text
 set nowrap
+
+" colored restriction of line length
+set colorcolumn=110
 
 filetype plugin on
 " au FileTYpe html setl ofu=htmlcomplete#CompleteTags

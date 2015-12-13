@@ -109,6 +109,7 @@ Bundle 'gmarik/vundle'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'bling/vim-airline'
 Bundle 'groenewege/vim-less'
+Bundle 'scrooloose/syntastic'
 " Bundle 'tpope/vim-fugitive'
 " Bundle 'Lokaltog/vim-easymotion'
 " Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
@@ -148,4 +149,17 @@ if &t_Co >= 256
   " colorscheme murphy
 
 endif
+
+" For syntastic (https://github.com/scrooloose/syntastic#settings)
+
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
+let g:syntastic_javascript_checkers = ['jshint']
 

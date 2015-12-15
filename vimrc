@@ -161,5 +161,9 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
+" let g:syntastic_php_checkers = ['php', 'phpcs']
+let g:syntastic_php_checkers = ['php']
 let g:syntastic_javascript_checkers = ['jshint']
+let g:syntastic_less_checkers = ['lessc']
+let g:syntastic_less_options = "--no-color"
 

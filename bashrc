@@ -118,4 +118,7 @@ fi
 
 export EDITOR=vim
 
+# phpcs
+
+PATH=$PATH:~/.composer/vendor/bin/
 

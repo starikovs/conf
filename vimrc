@@ -66,13 +66,15 @@ if !exists(":DiffOrig")
 		  \ | wincmd p | diffthis
 endif
 
+set modeline
+
 " http://vim.wikia.com/wiki/Indenting_source_code
 
 " copy the indentation from the previous line
 set autoindent
 
-" insert 4 spaces for a tab
-set tabstop=4
+" show tab as 8 chars
+set tabstop=8
 
 " insert 4 spaces for indentation ( >>, << or ==. automatic indentation)
 set shiftwidth=4
@@ -82,6 +84,9 @@ set softtabstop=4
 
 " insert space characters whenever the tab key is pressed
 set expandtab
+
+" does the right thing (mostly) in programs
+" set smartindent
 
 " don't wrap text
 set nowrap
@@ -110,6 +115,8 @@ Bundle 'altercation/vim-colors-solarized'
 Bundle 'bling/vim-airline'
 Bundle 'groenewege/vim-less'
 Bundle 'scrooloose/syntastic'
+Bundle 'mxw/vim-jsx'
+Bundle 'pangloss/vim-javascript'
 " Bundle 'tpope/vim-fugitive'
 " Bundle 'Lokaltog/vim-easymotion'
 " Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
@@ -156,14 +163,19 @@ set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
+" vim-jsx config
+let g:jsx_ext_required = 0 " Allow JSX in normal JS files
+
+" Syntastic config
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 0
 
 " let g:syntastic_php_checkers = ['php', 'phpcs']
-let g:syntastic_php_checkers = ['php']
-let g:syntastic_javascript_checkers = ['jshint']
-let g:syntastic_less_checkers = ['lessc']
-let g:syntastic_less_options = "--no-color"
+" let g:syntastic_php_checkers = ['php']
+" let g:syntastic_javascript_checkers = ['jshint']
+" let g:syntastic_javascript_checkers = ['eslint']
+" let g:syntastic_less_checkers = ['lessc']
+" let g:syntastic_less_options = "--no-color"
 

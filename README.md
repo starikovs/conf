@@ -10,6 +10,8 @@ dircolors -> ~/.dircolors (Solarized! https://github.com/seebi/dircolors-solariz
 
 bashrc -> ~/.bashrc
 
+Example: ln -s ~/Conf/dircolors ~/.dircolors
+
 ## osx
 
 bash_profile -> ~/.bash_profile 

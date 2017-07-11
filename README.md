@@ -10,6 +10,8 @@ dircolors -> ~/.dircolors (Solarized! https://github.com/seebi/dircolors-solariz
 
 bashrc -> ~/.bashrc
 
+init.vim -> ~/.config/nvim/init.vim
+
 Example: ln -s ~/Conf/dircolors ~/.dircolors
 
 ## osx

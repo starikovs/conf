@@ -109,9 +109,8 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'pangloss/vim-javascript'
 Plug 'groenewege/vim-less'
 Plug 'scrooloose/syntastic'
+"Plug 'mtscout6/syntastic-local-eslint.vim'
 Plug 'bling/vim-airline'
-Plug 'pangloss/vim-javascript'
-Plug 'groenewege/vim-less'
 Plug 'tpope/vim-fugitive'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 call plug#end()
@@ -148,9 +147,10 @@ let g:syntastic_check_on_wq = 0
 " let g:syntastic_php_checkers = ['php']
 " let g:syntastic_javascript_checkers = ['jshint']
 " if eslint installed locally
-" let g:syntastic_javascript_eslint_exe='$(npm bin)/eslint'
-" let g:syntastic_javascript_checkers = ['eslint']                                                            
-" let g:syntastic_less_checkers = ['lessc']
+let g:syntastic_javascript_checkers=['eslint']
+let g:syntastic_javascript_eslint_exec='node_modules/.bin/eslint'
+let g:syntastic_less_checkers = ['lessc']
+let g:syntastic_less_lessc_exec='node_modules/.bin/lessc'
 " let g:syntastic_less_options = "--no-color"
 
 " ctrlp

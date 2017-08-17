@@ -1,6 +1,9 @@
 " Use Vim settings, rather than Vi settings (much better!).
 " This must be first, because it changes other options as a side effect.
-set nocompatible
+set nocompatible " be iMproved, required
+
+" Map leader key.
+let mapleader=','
 
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
@@ -11,6 +14,7 @@ set history=50		" keep 50 lines of command line history
 set ruler		" show the cursor position all the time
 set showcmd		" display incomplete commands
 set incsearch		" do incremental searching
+set ignorecase
 
 " Don't use Ex mode, use Q for formatting
 map Q gq
@@ -99,47 +103,37 @@ filetype plugin on
 
 filetype off                  " required!
 
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" alternatively, pass a path where Vundle should install plugins
+" call vundle#begin('~/some/path/here')
 
-" let Vundle manage Vundle
-" required! 
-Bundle 'gmarik/vundle'
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
 
-" My bundles here:
+" My plugins here:
 "
 " original repos on GitHub
-" Bundle 'scrooloose/nerdtree'
-" Bundle 'kien/ctrlp.vim'
-Bundle 'altercation/vim-colors-solarized'
-Bundle 'bling/vim-airline'
-Bundle 'groenewege/vim-less'
-Bundle 'scrooloose/syntastic'
-Bundle 'mxw/vim-jsx'
-Bundle 'pangloss/vim-javascript'
-" Bundle 'tpope/vim-fugitive'
-" Bundle 'Lokaltog/vim-easymotion'
-" Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
-" Bundle 'tpope/vim-rails.git'
-" vim-scripts repos
-" Bundle 'L9'
-" Bundle 'FuzzyFinder'
-" non-GitHub repos
-" Bundle 'git://git.wincent.com/command-t.git'
-" Git repos on your local machine (i.e. when working on your own plugin)
-" Bundle 'file:///Users/gmarik/path/to/plugin'
-" ...
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'scrooloose/nerdtree'
+Plugin 'ctrlpvim/ctrlp.vim' 
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'pangloss/vim-javascript'
+Plugin 'groenewege/vim-less'
+Plugin 'scrooloose/syntastic'
+Plugin 'bling/vim-airline'
+Plugin 'tpope/vim-fugitive'
+Plugin 'ternjs/tern_for_vim'
+Plugin 'ervandew/supertab'
+" Plugin 'mxw/vim-jsx'
+" Plugin 'Lokaltog/vim-easymotion'
+" Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
 
 filetype plugin indent on     " required!
-
-" Brief help
-" :BundleList          - list configured bundles
-" :BundleInstall(!)    - install (update) bundles
-" :BundleSearch(!) foo - search (or refresh cache first) for foo
-" :BundleClean(!)      - confirm (or auto-approve) removal of unused bundles
-"
-" see :h vundle for more details or wiki for FAQ
-" NOTE: comments after Bundle commands are not allowed.kjjk`u`
 
 " MY CHANGES;
 " Switch syntax highlighting on, when the terminal has colors
@@ -157,6 +151,9 @@ if &t_Co >= 256
 
 endif
 
+" nerdtree
+map <C-n> :NERDTreeToggle<CR>
+
 " For syntastic (https://github.com/scrooloose/syntastic#settings)
 
 set statusline+=%#warningmsg#
@@ -164,7 +161,7 @@ set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
 " vim-jsx config
-let g:jsx_ext_required = 0 " Allow JSX in normal JS files
+" let g:jsx_ext_required = 0 " Allow JSX in normal JS files
 
 " Syntastic config
 let g:syntastic_always_populate_loc_list = 1
@@ -176,6 +173,20 @@ let g:syntastic_check_on_wq = 0
 " let g:syntastic_php_checkers = ['php']
 " let g:syntastic_javascript_checkers = ['jshint']
 " let g:syntastic_javascript_checkers = ['eslint']
+" if eslint installed locally
+let g:syntastic_javascript_checkers=['eslint']
+let g:syntastic_javascript_eslint_exec='node_modules/.bin/eslint'
 " let g:syntastic_less_checkers = ['lessc']
+let g:syntastic_less_checkers = ['lessc']
+let g:syntastic_less_lessc_exec='node_modules/.bin/lessc'
 " let g:syntastic_less_options = "--no-color"
+
+" ctrlp
+let g:ctrlp_custom_ignore = '\v[\/](\.git|\.vagrant|node_modules|vendor)$'
+
+
+" omni coplete
+set completeopt=longest,menuone
+autocmd FileType javascript let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
+set completeopt-=preview
 

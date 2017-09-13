@@ -122,10 +122,13 @@ Plugin 'scrooloose/nerdcommenter'
 Plugin 'pangloss/vim-javascript'
 Plugin 'groenewege/vim-less'
 Plugin 'scrooloose/syntastic'
-Plugin 'bling/vim-airline'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 Plugin 'tpope/vim-fugitive'
-Plugin 'ternjs/tern_for_vim'
+" Plugin 'ternjs/tern_for_vim'
 Plugin 'ervandew/supertab'
+Plugin 'leafgarland/typescript-vim' " syntax highlighting for typescript
+Plugin 'Quramy/tsuquyomi' " Make your Vim a TypeScript IDE
 " Plugin 'mxw/vim-jsx'
 " Plugin 'Lokaltog/vim-easymotion'
 " Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
@@ -150,6 +153,10 @@ if &t_Co >= 256
   " colorscheme murphy
 
 endif
+
+" ariline
+let g:airline_powerline_fonts = 0
+let g:airline#extensions#tabline#enabled = 1
 
 " nerdtree
 map <C-n> :NERDTreeToggle<CR>

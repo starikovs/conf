@@ -129,6 +129,7 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'ervandew/supertab'
 Plugin 'leafgarland/typescript-vim' " syntax highlighting for typescript
 Plugin 'Quramy/tsuquyomi' " Make your Vim a TypeScript IDE
+Plugin 'tpope/vim-sleuth'
 " Plugin 'mxw/vim-jsx'
 " Plugin 'Lokaltog/vim-easymotion'
 " Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}

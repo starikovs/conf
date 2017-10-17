@@ -121,4 +121,4 @@ export EDITOR=vim
 # phpcs
 
 PATH=$PATH:~/.composer/vendor/bin/
-
+#export PATH="$(brew --prefix homebrew/php/php72)/bin:$PATH"

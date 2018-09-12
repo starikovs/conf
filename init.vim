@@ -49,6 +49,9 @@ set smartindent
 " Uses shiftwidth instead of tabstop at start of lines
 set smarttab
 
+" Treat dashes as part of word:
+set iskeyword+=-
+
 " Show line numbers
 set nu
 
@@ -67,6 +70,11 @@ call plug#begin('~/.config/nvim/plugged')
 
   " For automatically set shiftwidth and expandtab
   Plug 'tpope/vim-sleuth'
+
+  Plug 'pangloss/vim-javascript'
+  Plug 'groenewege/vim-less'
+  " syntax highlighting for typescript:
+  Plug 'leafgarland/typescript-vim' 
 call plug#end()
 
 let g:airline_theme='solarized'
@@ -90,3 +98,7 @@ colorscheme solarized
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#buffer_nr_show = 1
+
+" fzf 
+let FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'
+

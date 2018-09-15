@@ -1,3 +1,6 @@
+" true color terminal support:
+set termguicolors
+
 " Map leader key.
 let mapleader=','
 
@@ -66,7 +69,8 @@ call plug#begin('~/.config/nvim/plugged')
   Plug '/usr/local/opt/fzf'
 
   Plug 'junegunn/fzf.vim'
-  Plug 'altercation/vim-colors-solarized'
+  "Plug 'altercation/vim-colors-solarized'
+  Plug 'morhetz/gruvbox'
 
   " For automatically set shiftwidth and expandtab
   Plug 'tpope/vim-sleuth'
@@ -75,10 +79,17 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'groenewege/vim-less'
   " syntax highlighting for typescript:
   Plug 'leafgarland/typescript-vim' 
+
+  " Make the yanked region highlighted and apparent:
+  Plug 'machakann/vim-highlightedyank'
+
+  Plug 'ludovicchabant/vim-gutentags'
 call plug#end()
 
-let g:airline_theme='solarized'
-let g:airline_solarized_bg='dark'
+" airline:
+"let g:airline_theme='solarized'
+"let g:airline_solarized_bg='dark'
+let g:airline_theme='gruvbox'
 
 " Prefix to the fzf commands, for example, instead of :GFiles enter :FzfGFiles
 let g:fzf_command_prefix = 'Fzf'
@@ -88,10 +99,11 @@ nnoremap <leader>g :FzfGFiles<cr>
 nnoremap <leader>G :FzfGFiles?<cr>
 nnoremap <leader>b :FzfBuffers<cr>
 
-" for altercation/vim-colors-solarized:
+" for altercation/vim-colors-solarized or other colors:
 syntax enable
 set background=dark
-colorscheme solarized
+colorscheme gruvbox
+"colorscheme solarized
 
 " ariline
 " let g:airline_powerline_fonts = 0

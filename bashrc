@@ -122,3 +122,5 @@ export EDITOR=vim
 
 PATH=$PATH:~/.composer/vendor/bin/
 export PATH="$(brew --prefix homebrew/php/php72)/bin:$PATH"
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
